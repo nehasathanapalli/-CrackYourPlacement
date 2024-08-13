@@ -1,0 +1,20 @@
+#given an array of strings group the anagrams together. 
+from collections import defaultdict
+from typing import List
+
+class Solution: 
+    def group(self, strs: list[str]) -> List[List[str]]:
+        anagram_map = defaultdict(list)
+        result = []
+        
+        #go through each of the words and check if it's an anagram
+        for s in strs: 
+            sorted_s = tuple(sorted(s)) #string sorted acc to alphabet
+            #we get list obj(mutable) back when we run sorted 
+            #so we convert to tuple(immmutable)
+            anagram_map[sorted_s].append(s)
+        
+        for value in anagram_map.values():
+            result.append(value)
+            
+        return result
