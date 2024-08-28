@@ -9,3 +9,6 @@ for i in range(1,len(x)):
     
 print(rotated)
 
+# rotated = [0] *len(x)
+rotated = x[1:]+ [x[0]]
+print(rotated)
